@@ -51,7 +51,8 @@ except Exception as e:
     # Dalam sistem nyata, lag\_24 dan lag\_168 diambil dari database 24 jam & 7 hari sebelumnya
     df_future = pd.DataFrame({'waktu': waktu_range})
     df_future['suhu_luar_C'] = suhu_rata_rata + np.sin(np.linspace(0, np.pi, 24)) * 3
-    df_future['kelembaban_luar_pct'] = 65.0 df_future['okupansi_orang'] = (okupansi_persen / 100.0) * 500 # Kapasitas gedung 500 orang
+    df_future['kelembaban_luar_pct'] = 65.0 
+    df_future['okupansi_orang'] = (okupansi_persen / 100.0) * 500 # Kapasitas gedung 500 orang
     df_future['hari_libur'] = int(hari_libur)
 
     # Nilai lag historis disimulasikan untuk demo antarmuka
